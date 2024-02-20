@@ -1,0 +1,109 @@
+.modal-parent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(99, 98, 98, 0.443);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+.modal-parent.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.delete-modal {
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.delete-modal h1 {
+    font-size: 2rem;
+}
+
+.delete-modal-btns {
+    display: flex;
+    column-gap: 20px;
+}
+
+.delete-btn {
+    width: 100%;
+    margin-top: 30px;
+    font-size: 1.3rem;
+    padding: 20px 0;
+    border: none;
+    outline: none;
+}
+
+
+/* image */
+
+
+.bg-modal {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    padding: 3rem 0;
+
+}
+
+
+.img-modal {
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-modal {
+
+    width: 60%;
+    height: 50%;
+    display: flex;
+    padding: 1rem 4rem;
+    flex-direction: column;
+
+}
+
+.detai-info-modal {
+    display: flex;
+
+}
+
+.gap-info {
+    margin-right: 4rem;
+}
+
+
+
+.btn-info-modal {
+    padding: 1rem 3rem !important;
+    font-size: 1.5rem !important;
+    margin-top: 3rem;
+
+}
+
+.ul-show-Info {
+    text-align: start;
+   
+
+
+}
+
+.ul-show-Info ul li {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+}

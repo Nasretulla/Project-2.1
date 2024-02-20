@@ -1,0 +1,67 @@
+header {
+    position: relative;
+    background-color: rgb(231, 231, 231);
+    height: 40vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    background: url('../../../images/Helsinki/arttu-paivinen-dyZFTSzmXRk-unsplash.jpg') rgb(242, 242, 242) no-repeat center center scroll;
+    background-size: auto;
+}
+
+
+.box {
+    --mask:
+        radial-gradient(42.43px at 50% calc(100% - 60.00px), #000 99%, #0000 101%) calc(50% - 60px) 0/120px 100%,
+        radial-gradient(42.43px at 50% calc(100% + 30.00px), #0000 99%, #000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+
+}
+
+header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(6, 6, 6);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.heder-title {
+    letter-spacing: 3rem;
+}
+
+
+
+@media (pointer: coarse) and (hover: none) {
+    header {
+        background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    }
+
+    header video {
+        display: none;
+    }
+}

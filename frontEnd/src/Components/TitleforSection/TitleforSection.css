@@ -1,0 +1,43 @@
+.title-for-sectiens {
+    --s: 0.1em;
+    /* the thickness of the line */
+    --c:#2E2F5C;
+    /* the color */
+
+    color: #0000;
+    padding-bottom: var(--s);
+    background:
+        linear-gradient(90deg, var(--c) 50%, #000 0) calc(100% - var(--_p, 0%))/200% 100%,
+        linear-gradient(var(--c) 0 0) 0% 100%/var(--_p, 0%) var(--s) no-repeat;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    transition: 0.5s;
+}
+
+.title-for-sectiens:hover {
+    --_p: 100%
+}
+
+
+
+
+.title-for-sectiens {
+    font-family: system-ui, sans-serif;
+    font-size: 4rem;
+    cursor: pointer;
+    letter-spacing: 10px;
+
+}
+
+.titel-back{
+    background-color: #2E2F5C;
+    width: 100%;
+    height: 100px;
+    margin-top: 0px;
+}
+
+.title-box{
+    margin-top: 0;
+    padding-top: 2rem;
+
+}
