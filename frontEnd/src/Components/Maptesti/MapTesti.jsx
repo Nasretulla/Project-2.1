@@ -10,7 +10,7 @@ const icon = L.icon({
 });
 const position = [60.1699, 24.9384];
 
-// reset Location *****************
+// reset Location *******************
 
 function ResetCenterView({ selectPosition }) {
   const map = useMap();
