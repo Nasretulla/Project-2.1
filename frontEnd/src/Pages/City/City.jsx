@@ -166,7 +166,7 @@ export default function City() {
           {shownLocation.length === 0 ? (
             <>
               <div className="alert alert-light">
-                Vaihtoehtoja ei ole {statusTitle}
+                Ei löytynyt {statusTitle}
               </div>
             </>
           ) : (
