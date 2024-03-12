@@ -3,7 +3,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/authContext";
-import ReCAPTCHA from "react-google-recaptcha";
+
 import swal from "sweetalert";
 
 import "./Login.css";
@@ -13,27 +13,6 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const navigait = useNavigate();
   const authContext = useContext(AuthContext);
-
-  // const form = useFormik({
-  //   initialValues: { identifier: "", password: "" },
-  //   onSubmit: (values) => {
-  //     console.log(values);
-  //     fetch(`http://localhost:4000/v1/auth/login`, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(values),
-  //     })
-  //       .then((res) => {
-  //         console.log(res);
-  //         res.json();
-  //       })
-  //       .then((result) => {
-  //         console.log(result);
-  //       });
-  //   },
-  // });
 
   const userLogin = (event) => {
     event.preventDefault();
