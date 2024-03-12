@@ -21,14 +21,7 @@ export default function OneBoxForCity(props) {
   const showAlltext = props.desc_fi ? props.desc_fi.slice(0, 300) : "-";
   const [selectPosition, setSelectPosition] = useState(null);
 
-  // let imageUrl;
-  // if (props.address_locality.fi === "Helsinki") {
-  //   imageUrl = helsinki;
-  // } else if (props.address_locality.fi === "Vantaa") {
-  //   imageUrl = vantaa;
-  // } else if (props.address_locality.fi === "Espoo") {
-  //   imageUrl = espoo;
-  // }
+  
 
   const closeModalShowInfo = () => {
     setShowMordetails(false);
@@ -109,23 +102,6 @@ export default function OneBoxForCity(props) {
                     <FaLocationDot />
                     {props.street_address_fi ? props.street_address_fi : "-"}
                   </li>
-                  <li className="description">
-                    {props.desc_fi && props.desc_fi.length > 300 ? (
-                      <span onClick={() => setShowFullText(!showFullText)}>
-                        {showFullText ? `${props.desc_fi}` : "LUE LISÄÄ"}
-                      </span>
-                    ) : (
-                      props.desc_fi
-                    )}
-                  </li>
-
-                  {/* <li className="description">{showFullText ? props.desc_fi : showAlltext}
-                  </li>
-                  {props.desc_fi && props.desc_fi.length > 300 && (
-                    <span onClick={() => setShowFullText(!showFullText)}>
-                      {showFullText ? "VÄHÄÄN" : "LISÄÄ TEXTI"}
-                    </span>
-                  )} */}
                 </ul>
               </div>
             </div>

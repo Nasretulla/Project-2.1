@@ -23,7 +23,7 @@ export default function Contact() {
       fetch(`http://localhost:4000/v1/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values,null,2),
+        body: JSON.stringify(values, null, 2),
       }).then((res) => {
         console.log(res);
         if (res.ok) {
@@ -31,12 +31,11 @@ export default function Contact() {
             title: "Viesti lähetettiin",
             buttons: "OKEI",
             icon: "success",
-          }).then(values=>navigate('/'))
+          }).then((values) => navigate("/"));
         }
       });
     },
   });
-
 
   return (
     <>
@@ -52,7 +51,7 @@ export default function Contact() {
                       <div className="col-lg-6">
                         <div className="p-5">
                           <p className="text-muted mt-2 mb-5">
-                            Contact Us Please Say to us{" "}
+                          Ottaa Yhteyttä{" "}
                           </p>
 
                           <form onSubmit={form.handleSubmit}>
@@ -78,7 +77,7 @@ export default function Contact() {
                                 onBlur={form.handleBlur}
                               />
 
-                              <label>Comment</label>
+                              <label>Viesti</label>
                               <input
                                 type="textarea"
                                 className="form-control-textarea"
@@ -89,7 +88,7 @@ export default function Contact() {
                               />
                             </div>
                             <button type="submit" className="btn-form fs-4">
-                              JATKA
+                            Lähetä
                             </button>
                           </form>
                         </div>
