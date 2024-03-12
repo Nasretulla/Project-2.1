@@ -3,7 +3,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import UserAboutus from "../../Components/UserAboutus/UserAboutus";
 import { Swiper, SwiperSlide } from "swiper/react";
-import image from "../../../images/Helsinki/bayo.jpg";
+import image from "../../../images/pic.jpg";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -40,7 +40,7 @@ export default function AboutUs() {
           backgroundImage: `url(${image})`,
           height: "80rem",
           backgroundSize: "cover",
-          marginTop: "-2rem",
+          marginTop: "-4rem",
         }}
       >
         {" "}
@@ -50,7 +50,7 @@ export default function AboutUs() {
             style={{
               fontSize: "5rem",
               color: "black",
-              padding: "10rem",
+              padding: "5rem",
             }}
           >
             Ryhmä A
@@ -74,27 +74,7 @@ export default function AboutUs() {
           </div>
         </div>
         <div className="container mt-5 mb-5">
-          <div className="row g-2">
-            {/* <Swiper
-              loop={true}
-              cssMode={true}
-              navigation={true}
-              mousewheel={true}
-              keyboard={true}
-              modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-              className="mySwiper"
-              style={{
-                marginTop: "8rem",
-                borderRadius: "20px 20px",
-              }}
-            >
-              {users.map((user, index) => (
-                <SwiperSlide key={index} style={{ marginLeft: "25rem" }}>
-                  <UserAboutus {...user} />
-                </SwiperSlide>
-              ))}
-            </Swiper> */}
-          </div>
+          <div className="row g-2"></div>
         </div>
       </article>
       <Footer />
