@@ -7,7 +7,7 @@ export default function TitleforSection({ title }) {
   return (
     <>
       <div className="container title-box">
-        <h1 className="title-for-sectiens">Tervetuloa {title}</h1>
+        <h1 className="title-for-sectiens">Kaupunki: {title}</h1>
       </div>
       {/* <div className="container box titel-back">
 

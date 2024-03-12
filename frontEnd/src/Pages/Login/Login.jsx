@@ -52,7 +52,7 @@ export default function Login() {
       })
       .catch((err) => {
         swal({
-          title: "Käyttäjätunnus ja salasana eivät ole oikein",
+          title: "Käyttäjätunnus ja salasana eivät täsmää",
           buttons: "Uudestan",
           icon: "error",
         });
@@ -72,13 +72,12 @@ export default function Login() {
                     <div className="col-lg-6">
                       <div className="p-5">
                         <p className="text-muted mt-2 mb-5">
-                          Anna sähköpostiosoitteesi ja salasanasi päästäksesi
-                          kaikkiin paikkoihin.
+                          Kirjaudu sisään tallentaaksesi nähtävyydet.
                         </p>
 
                         <form>
                           <div className="form-group">
-                            <label>SÄHKOPÖSTI</label>
+                            <label>SÄHKÖPÖSTI</label>
                             <input
                               style={{ fontSize: "18px" }}
                               type="text"
@@ -89,7 +88,7 @@ export default function Login() {
                             />
                           </div>
                           <div className="form-group mb-5">
-                            <label for="exampleInputPassword1">SALAASANA</label>
+                            <label for="exampleInputPassword1">SALASANA</label>
                             <input
                               style={{ fontSize: "18px" }}
                               type="password"
@@ -105,7 +104,7 @@ export default function Login() {
                             onClick={userLogin}
                             className="btn-form fs-2"
                           >
-                            JATKA
+                            Kirjaudu sisään
                           </button>
                         </form>
                       </div>
@@ -128,7 +127,7 @@ export default function Login() {
               <p className="text-muted text-center mt-5 mb-0">
                 Eikö sinulla ole tiliä?{" "}
                 <Link to={"/register"} className="text-primary ml-1">
-                  Rekisteröidy
+                  Luo Tili
                 </Link>
               </p>
             </div>

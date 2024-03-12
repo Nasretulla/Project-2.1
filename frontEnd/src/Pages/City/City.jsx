@@ -166,7 +166,7 @@ export default function City() {
           {shownLocation.length === 0 ? (
             <>
               <div className="alert alert-light">
-                Ei löytynyt {statusTitle}
+                Etsityllä sanalla ei löytynyt mitään paikkaa.
               </div>
             </>
           ) : (

@@ -68,8 +68,8 @@ export default function AboutUs() {
           <div className="row members">
             <div className="jäsenet">Ryhmän jäsenet</div>
             <div className="col-md-2 box-person">Roya</div>
-            <div className="col-md-2 box-person">Nusrat</div>
-            <div className="col-md-2 box-person">Marija</div>
+            <div className="col-md-2 box-person">Nasrat</div>
+            <div className="col-md-2 box-person">Maria</div>
             <div className="col-md-2 box-person">Olla</div>
           </div>
         </div>

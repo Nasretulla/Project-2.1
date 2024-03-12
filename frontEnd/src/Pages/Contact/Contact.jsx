@@ -51,7 +51,7 @@ export default function Contact() {
                       <div className="col-lg-6">
                         <div className="p-5">
                           <p className="text-muted mt-2 mb-5">
-                          Ottaa Yhteyttä{" "}
+                            Ottaa Yhteyttä{" "}
                           </p>
 
                           <form onSubmit={form.handleSubmit}>
@@ -67,7 +67,7 @@ export default function Contact() {
                               />
                             </div>
                             <div className="form-group mb-5">
-                              <label>Sähkoposti</label>
+                              <label>Sähköposti</label>
                               <input
                                 type="email"
                                 name="email"
@@ -88,7 +88,7 @@ export default function Contact() {
                               />
                             </div>
                             <button type="submit" className="btn-form fs-4">
-                            Lähetä
+                              Lähetä
                             </button>
                           </form>
                         </div>
@@ -97,9 +97,7 @@ export default function Contact() {
                       <div className="col-lg-6 d-none d-lg-inline-block">
                         <div className="rounded-right img-register">
                           <div className="overlay rounded-right"></div>
-                          <div className="account-testimonial">
-                            <h4 className="text-white mb-4">SANOTAAN MEIDÄN</h4>
-                          </div>
+                          <div className="account-testimonial"></div>
                         </div>
                       </div>
                     </div>
