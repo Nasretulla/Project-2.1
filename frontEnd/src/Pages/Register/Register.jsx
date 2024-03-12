@@ -1,13 +1,28 @@
-import React from "react";
-import { Link, json } from "react-router-dom";
+import React, { useContext } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import { useFormik } from "formik";
-
+import AuthContext from "../../context/authContext";
 
 import "./Register.css";
+import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+  const authContext = useContext(AuthContext);
+  const navigaite = useNavigate();
+
+  const validate = (values) => {
+    const errors = {};
+
+    if (!values.password) {
+      errors.password = "Pakollinen";
+    } else if (values.password.length < 8) {
+      errors.password = "Must be 8 characters or more";
+    }
+    return errors;
+  };
+
   const form = useFormik({
     initialValues: {
       name: "",
@@ -17,16 +32,32 @@ export default function Register() {
       confirmPassword: "",
       phone: 0,
     },
+    validate,
     onSubmit: (values) => {
       fetch(`http://localhost:4000/v1/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
-      }).then((res) => {
-        if (res.ok) {
-          console.log(res);
-        }
-      });
+      })
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          } else if (res.status === 409) {
+            swal({
+              title: "UUDESTAN",
+              icon: "warning",
+              buttons: "OK",
+            });
+          } else {
+            console.log("khata");
+          }
+        })
+        .then((result) => {
+          form.name = "";
+          console.log(result);
+          authContext.login(result.user, result.accessToken);
+          navigaite("/");
+        });
     },
   });
 
@@ -35,34 +66,34 @@ export default function Register() {
       <Navbar />
       <div className="container container-register">
         <div className="test">
-          <div id="main-wrapper" class="container">
-            <div class="row justify-content-center">
-              <div class="col-xl-10">
-                <div class="card border-0">
-                  <div class="card-body p-0">
-                    <div class="row no-gutters">
-                      <div class="col-md-6">
-                        <div class="p-5">
-                          <p class="text-muted mt-2 mb-5">Welcom to our page</p>
+          <div id="main-wrapper" className="container">
+            <div className="row justify-content-center">
+              <div className="col-xl-10">
+                <div className="card border-0">
+                  <div className="card-body p-0">
+                    <div className="row no-gutters">
+                      <div className="col-md-6">
+                        <div className="p-5">
+                          <p className="text-muted mt-2 mb-5">
+                            Welcom to our page
+                          </p>
                           <form onSubmit={form.handleSubmit}>
-                            <div class="form-group">
+                            <div className="form-group">
                               <label for="exampleInputEmail1">Sukunimi</label>
                               <input
                                 type="text"
-                                class="form-control"
+                                className="form-control"
                                 name="name"
                                 onChange={form.handleChange}
                                 onBlur={form.handleBlur}
                                 value={form.name}
                               />
                             </div>
-                            <div class="form-group mb-5">
-                              <label for="exampleInputPassword1">
-                                Username
-                              </label>
+                            <div className="form-group mb-5">
+                              <label for="exampleInputPassword1">Etunimi</label>
                               <input
                                 type="username"
-                                class="form-control"
+                                className="form-control"
                                 name="username"
                                 onChange={form.handleChange}
                                 onBlur={form.handleBlur}
@@ -73,7 +104,7 @@ export default function Register() {
                               </label>
                               <input
                                 type="email"
-                                class="form-control"
+                                className="form-control"
                                 name="email"
                                 onChange={form.handleChange}
                                 onBlur={form.handleBlur}
@@ -84,38 +115,43 @@ export default function Register() {
                               </label>
                               <input
                                 type="password"
-                                class="form-control"
+                                className="form-control"
                                 name="password"
                                 onChange={form.handleChange}
                                 onBlur={form.handleBlur}
                                 value={form.password}
                               />
+                              {form.errors.password && form.touched.password ? (
+                                <div className="validat-register">
+                                  {form.errors.password}
+                                </div>
+                              ) : null}
                               <label for="exampleInputPassword1">
-                              confirmPassword
+                                Vahvista salasana
                               </label>
                               <input
                                 type="password"
-                                class="form-control"
+                                className="form-control"
                                 name="confirmPassword"
                                 onChange={form.handleChange}
                                 onBlur={form.handleBlur}
                                 value={form.confirmPassword}
                               />
                             </div>
-                            <button type="submit" class="btn btn-theme">
-                              Login
+                            <button type="submit" className="btn-form fs-3">
+                              JATKA
                             </button>
                           </form>
                         </div>
                       </div>
 
-                      <div class="col-lg-6 d-none d-lg-inline-block">
-                        <div class="rounded-right img-register">
-                          <div class="overlay rounded-right"></div>
-                          <div class="account-testimonial">
-                            <h4 class="text-white mb-4">
+                      <div className="col-lg-6 d-none d-lg-inline-block">
+                        <div className="rounded-right img-register">
+                          <div className="overlay rounded-right"></div>
+                          <div className="account-testimonial">
+                            {/* <h4 className="text-white mb-4">
                               This beautiful theme yours!
-                            </h4>
+                            </h4> */}
                           </div>
                         </div>
                       </div>

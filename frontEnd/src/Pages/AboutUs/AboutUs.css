@@ -1,0 +1,14 @@
+.box-person{
+    border: 1px solid black;
+    padding: 2rem 0;
+    border-radius: 10px;
+   
+}
+
+.members{
+
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}

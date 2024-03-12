@@ -162,3 +162,22 @@
     height: 350px;
     object-fit: cover;
 }
+
+
+.detail-for-city li{
+    font-size:10px;
+    text-align: justify;
+
+   
+}
+
+
+.section-map{
+    width: 100%;
+    height: 100%;
+}
+
+.ul-show-Info{
+    align-items: flex-start;
+    
+}

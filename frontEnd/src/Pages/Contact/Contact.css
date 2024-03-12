@@ -120,3 +120,12 @@
 
   margin: 2rem 0;
 }
+
+.form-control-textarea{
+  display: flex;
+  width: 100%;
+  font-size: 10px;
+  height: 200px;
+  border:1px solid rgb(211, 211, 211) ;
+  border-radius: 5px;
+}

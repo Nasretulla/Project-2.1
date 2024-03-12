@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-
 import "./Search.css";
-import { json } from "react-router-dom";
+
 export default function Search({ selectPosition, setSelectPosition }) {
   const [searchValue, setSearchValue] = useState("");
   const [resultSearch, setresultSearch] = useState([]);
@@ -25,8 +24,6 @@ export default function Search({ selectPosition, setSelectPosition }) {
     setSearchValue(modifiedValue);
   };
 
- 
-
   return (
     <>
       <div className="container container-search">
@@ -47,8 +44,14 @@ export default function Search({ selectPosition, setSelectPosition }) {
             </div>
             <div>
               <ul>
-                {resultSearch?.map((result) => (
-                  <li style={{cursor:'pointer'}} onClick={() => setSelectPosition(result)}>{result.name_fi}</li>
+                {resultSearch?.map((result, index) => (
+                  <li
+                    key={index}
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setSelectPosition(result)}
+                  >
+                    {result.name_fi}
+                  </li>
                 ))}
               </ul>
             </div>

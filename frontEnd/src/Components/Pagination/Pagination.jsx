@@ -26,13 +26,13 @@ export default function Pagination({
     <>
       <div className="container">
         <div className="row">
-          <div class="pagination_rounded">
+          <div className="pagination_rounded">
             <h3 className="page-number">
-              Page:{Number(page) <= 0 ? 1 : Number(page)}
+            Sivu:{Number(page) <= 0 ? 1 : Number(page)}
             </h3>
             <ul>
               <li>
-                <Link to={`${pathname}/${Number(page) - 1}`} class="prev">
+                <Link to={`${pathname}/${Number(page) - 1}`} className="prev">
                   {`Edellinen`}
                 </Link>
               </li>
@@ -57,7 +57,7 @@ export default function Pagination({
                 ))}
 
               <li>
-                <Link to={`${pathname}/${Number(page) + 1}`} class="next">
+                <Link to={`${pathname}/${Number(page) + 1}`} className="next">
                   {`Seuraava`}
                 </Link>
               </li>

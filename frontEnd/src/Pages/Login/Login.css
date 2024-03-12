@@ -1,13 +1,10 @@
 #main-wrapper {
-    padding-top: 3rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+    padding-top: 6rem;
 
 }
 
 .test {
-
-    height: 80vh;
+    height: 100vh;
 }
 
 
@@ -51,11 +48,24 @@
     background-color: #5369f8;
     border-color: #5369f8;
     color: #fff;
+    font-size: 3rem;
 }
 
 .form-group label {
     font-size: 2rem;
-
+color: rgb(186, 185, 185);
+margin-bottom: 5px;
+font-family: inherit;
 
 }
+
+.btn-form{
+
+    border-radius: 3px;
+    padding: 0.5rem 2rem;
+    border: none;
+}
+
+
+
 

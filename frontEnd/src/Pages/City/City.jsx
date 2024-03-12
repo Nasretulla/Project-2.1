@@ -16,7 +16,7 @@ export default function City() {
   const [orderLocation, setOrderlocation] = useState([]);
   const [shownLocation, setShownLocation] = useState([]);
   const [status, setStatus] = useState("default");
-  const [statusTitle, setStatusTitle] = useState("JÄARJESTää");
+  const [statusTitle, setStatusTitle] = useState("JÄRJESTÄÄ");
   const [searchValue, setSearchValue] = useState("");
 
   //=>******************************** api get from this web https://api.hel.fi/linkedevents/v1/
@@ -86,105 +86,105 @@ export default function City() {
     <>
       <Navbar />
 
-        <TitleforSection title={adres} />
+      <TitleforSection title={adres} />
 
-        <div className="container">
-          <div className="row category-section">
-            <div className="col-md-6">
-              <div className="courses-top-bar__left">
-                <form action="#" className="courses-top-bar__form">
-                  <FaSearch className="courses-top-bar__search-icon" />
-                  <input
-                    type="text"
-                    className="courses-top-bar__input"
-                    value={searchValue}
-                    onChange={searchValueChangeHandeler}
-                  />
-                </form>
-              </div>
+      <div className="container">
+        <div className="row category-section">
+          <div className="col-md-6">
+            <div className="courses-top-bar__left">
+              <form action="#" className="courses-top-bar__form">
+                <FaSearch className="courses-top-bar__search-icon" />
+                <input
+                  type="text"
+                  className="courses-top-bar__input"
+                  value={searchValue}
+                  onChange={searchValueChangeHandeler}
+                />
+              </form>
             </div>
-            <div className="col-md-6">
-              <div className="courses-top-bar__selection">
-                <span className="courses-top-bar__selection-title">
-                  <VscTriangleDown className="courses-top-bar__selection-icon" />
-                  {statusTitle}
-                </span>
-                <ul className="courses-top-bar__selection-list">
-                  <li
-                    className="courses-top-bar__selection-item"
-                    onClick={(event) => {
-                      setStatus("default");
-                      statusChangeHandeler(event);
-                    }}
-                  >
-                    KAIKKI PAIKKA
-                  </li>
-                  <li
-                    className="courses-top-bar__selection-item "
-                    onClick={(event) => {
-                      setStatus("puisto");
-                      statusChangeHandeler(event);
-                    }}
-                  >
-                    PUISTO
-                  </li>
-                  <li
-                    className="courses-top-bar__selection-item "
-                    onClick={(event) => {
-                      setStatus("kirjasto");
-                      statusChangeHandeler(event);
-                    }}
-                  >
-                    KIRJASTO
-                  </li>
-                  <li
-                    className="courses-top-bar__selection-item "
-                    onClick={(event) => {
-                      setStatus("museo");
-                      statusChangeHandeler(event);
-                    }}
-                  >
-                    MUSEO
-                  </li>
-                  <li
-                    className="courses-top-bar__selection-item "
-                    onClick={(event) => {
-                      setStatus("kirkko");
-                      statusChangeHandeler(event);
-                    }}
-                  >
-                    KIRKKO
-                  </li>
-                </ul>
-              </div>
+          </div>
+          <div className="col-md-6">
+            <div className="courses-top-bar__selection">
+              <span className="courses-top-bar__selection-title">
+                <VscTriangleDown className="courses-top-bar__selection-icon" />
+                {statusTitle}
+              </span>
+              <ul className="courses-top-bar__selection-list">
+                <li
+                  className="courses-top-bar__selection-item"
+                  onClick={(event) => {
+                    setStatus("default");
+                    statusChangeHandeler(event);
+                  }}
+                >
+                  NÄHTÄVYYDET
+                </li>
+                <li
+                  className="courses-top-bar__selection-item "
+                  onClick={(event) => {
+                    setStatus("puisto");
+                    statusChangeHandeler(event);
+                  }}
+                >
+                  PUISTO
+                </li>
+                <li
+                  className="courses-top-bar__selection-item "
+                  onClick={(event) => {
+                    setStatus("kirjasto");
+                    statusChangeHandeler(event);
+                  }}
+                >
+                  KIRJASTO
+                </li>
+                <li
+                  className="courses-top-bar__selection-item "
+                  onClick={(event) => {
+                    setStatus("museo");
+                    statusChangeHandeler(event);
+                  }}
+                >
+                  MUSEO
+                </li>
+                <li
+                  className="courses-top-bar__selection-item "
+                  onClick={(event) => {
+                    setStatus("kirkko");
+                    statusChangeHandeler(event);
+                  }}
+                >
+                  KIRKKO
+                </li>
+              </ul>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="container box-all-city">
-          <div className="row box-alert">
-            {shownLocation.length === 0 ? (
-              <>
-                <div className="alert alert-light">
-                  Vaihtoehtoja ei ole {statusTitle}
-                </div>
-              </>
-            ) : (
-              <>
-                {shownLocation.map((item) => (
-                  <OneBoxForCity {...item} />
-                ))}
-              </>
-            )}
-          </div>
+      <div className="container box-all-city">
+        <div className="row box-alert">
+          {shownLocation.length === 0 ? (
+            <>
+              <div className="alert alert-light">
+                Vaihtoehtoja ei ole {statusTitle}
+              </div>
+            </>
+          ) : (
+            <>
+              {shownLocation.reverse().map((item) => (
+                <OneBoxForCity {...item} />
+              ))}
+            </>
+          )}
           <Pagination
             items={orderLocation}
-            itemsCount={4}
+            itemsCount={8}
             pathname={`/city/${adres}`}
             setShownLocation={setShownLocation}
             shownLocation={shownLocation}
           />
         </div>
+      </div>
 
       <Footer />
     </>

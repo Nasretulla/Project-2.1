@@ -73,3 +73,13 @@ padding-top: 3rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
 }
+
+.mene-loggin{
+    border-bottom: 2px solid black;
+    font-weight: 800;
+    margin-left: 2rem;
+}
+.mene-loggin:hover{
+  padding:5px;
+  transition: 0.78ms ease-out;
+}

@@ -8,7 +8,7 @@ html {
 body {
     line-height: 1.6;
     font-size: 1.6rem;
-    font-family: var(--primary-font);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
 
@@ -25,9 +25,6 @@ a {
     transition: all 400ms ease;
 }
 
-a:hover {
-    color: #1e83f0;
-}
 
 i {
     user-select: none;

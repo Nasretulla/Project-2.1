@@ -3,79 +3,103 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import { useFormik } from "formik";
 import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
 
 import "./Contact.css";
 
-import { useNavigate } from "react-router-dom";
-
 export default function Contact() {
   const navigate = useNavigate();
-  
+
+  const form = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      phone: 0,
+      body: "",
+    },
+
+    onSubmit: (values) => {
+      console.log(values);
+      fetch(`http://localhost:4000/v1/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values,null,2),
+      }).then((res) => {
+        console.log(res);
+        if (res.ok) {
+          swal({
+            title: "Viesti lähetettiin",
+            buttons: "OKEI",
+            icon: "success",
+          }).then(values=>navigate('/'))
+        }
+      });
+    },
+  });
+
+
   return (
     <>
       <Navbar />
       <div className="container-for-register">
         <div className="test">
-          <div id="main-wrapper" class="container">
-            <div class="row justify-content-center">
-              <div class="col-xl-10">
-                <div class="card border-0">
-                  <div class="card-body p-0">
-                    <div class="row no-gutters">
-                      <div class="col-lg-6">
-                        <div class="p-5">
-                          <p class="text-muted mt-2 mb-5">Contact Us Please Say to us </p>
+          <div id="main-wrapper" className="container">
+            <div className="row justify-content-center">
+              <div className="col-xl-10">
+                <div className="card border-0">
+                  <div className="card-body p-0">
+                    <div className="row no-gutters">
+                      <div className="col-lg-6">
+                        <div className="p-5">
+                          <p className="text-muted mt-2 mb-5">
+                            Contact Us Please Say to us{" "}
+                          </p>
 
-                          <form>
-                            <div class="form-group">
-                              <label for="exampleInputEmail1">Sukunimi</label>
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="exampleInputEmail1"
-                              />
-                            </div>
-                            <div class="form-group mb-5">
-                              <label for="exampleInputPassword1">
-                                Sähkoposti
-                              </label>
-                              <input
-                                type="username"
-                                class="form-control"
-                                id="exampleInputPassword1"
-                              />
-                              <label for="exampleInputPassword1">
-                                Phone Number
-                              </label>
+                          <form onSubmit={form.handleSubmit}>
+                            <div className="form-group">
+                              <label>Sukunimi</label>
                               <input
                                 type="text"
-                                class="form-control"
-                                id="exampleInputPassword1"
-                              />
-                             
-                              <label for="exampleInputPassword1">
-                                Comment
-                              </label>
-                              <input
-                                type="textarea"
-                                class="form-control"
-                                id="exampleInputPassword1"
+                                className="form-control"
+                                name="name"
+                                value={form.name}
+                                onChange={form.handleChange}
+                                onBlur={form.handleBlur}
                               />
                             </div>
-                            <button type="submit" class="btn btn-theme">
-                              Login
+                            <div className="form-group mb-5">
+                              <label>Sähkoposti</label>
+                              <input
+                                type="email"
+                                name="email"
+                                className="form-control"
+                                value={form.email}
+                                onChange={form.handleChange}
+                                onBlur={form.handleBlur}
+                              />
+
+                              <label>Comment</label>
+                              <input
+                                type="textarea"
+                                className="form-control-textarea"
+                                value={form.body}
+                                onChange={form.handleChange}
+                                onBlur={form.handleBlur}
+                                name="body"
+                              />
+                            </div>
+                            <button type="submit" className="btn-form fs-4">
+                              JATKA
                             </button>
                           </form>
                         </div>
                       </div>
 
-                      <div class="col-lg-6 d-none d-lg-inline-block">
-                        <div class="rounded-right img-register">
-                          <div class="overlay rounded-right"></div>
-                          <div class="account-testimonial">
-                            <h4 class="text-white mb-4">
-                              SANOTAAN MEIDÄN
-                            </h4>
+                      <div className="col-lg-6 d-none d-lg-inline-block">
+                        <div className="rounded-right img-register">
+                          <div className="overlay rounded-right"></div>
+                          <div className="account-testimonial">
+                            <h4 className="text-white mb-4">SANOTAAN MEIDÄN</h4>
                           </div>
                         </div>
                       </div>

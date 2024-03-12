@@ -13,6 +13,7 @@
     opacity: 0;
     visibility: hidden;
     transition: 0.4s;
+
 }
 
 .modal-parent.active {
@@ -51,12 +52,15 @@
 .bg-modal {
     background-color: white;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
     border-radius: 20px;
     padding: 3rem 0;
+    height: 80vh;
+
 
 }
+
+
 
 
 .img-modal {
@@ -95,7 +99,8 @@
 
 .ul-show-Info {
     text-align: start;
-   
+
+
 
 
 }
@@ -106,4 +111,27 @@
     align-items: center;
     gap: 2rem;
 
+}
+
+.section-map {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.section-map button {
+    width: 50%;
+    align-self: center;
+}
+
+.description {
+    cursor: pointer;
+}
+
+
+@media (max-width: 755px) {
+    .ul-show-Info ul li {
+        font-size: 1rem;
+    }
 }

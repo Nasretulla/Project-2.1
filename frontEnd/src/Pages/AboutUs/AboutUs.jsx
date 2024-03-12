@@ -14,10 +14,18 @@ import "./AboutUs.css";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 
 const allUsers = [
-  { name: "Roya", job: "Student", des: "lorm......" },
-  { name: "Ola", job: "Student", des: "lorm......testiiiiii" },
-  { name: "Maria", job: "Student", des: "lorm...... is test 2222" },
-  { name: "Nasrat", job: "Student", des: "lorm......" },
+  {
+    name: "Roya",
+    job: "",
+    des: "",
+  },
+  { name: "Ola", job: "Koodari", des: "" },
+  { name: "Maria", job: "koodari", des: "" },
+  {
+    name: "Nasrat",
+    job: "Koodari",
+    des: "",
+  },
 ];
 
 export default function AboutUs() {
@@ -36,21 +44,38 @@ export default function AboutUs() {
         }}
       >
         {" "}
-        <h2
-          className="welcom"
-          style={{
-            fontSize: "5rem",
-            textAlign: "center",
-            color: "white",
-            padding: "10rem",
-          }}
-        >
-          Welcom to our page
-        </h2>
-        <div className="container box-aboutus"></div>
+        <div className="container">
+          <h2
+            className="welcom"
+            style={{
+              fontSize: "5rem",
+              color: "black",
+              padding: "10rem",
+            }}
+          >
+            Ryhmä A
+          </h2>
+          <p className="part1">
+            Toteutimme tämän koulun ryhmäprojektin Rambolille. Projektissa
+            hyödynsimme monipuolisesti erilaisia teknologioita, kuten Reactia,
+            Bootstrapia ja MongoDB:tä tietokantana. Backendin toteutuksessa
+            käytimme Node.js:ää ja Expressiä. Käyttöliittymän toteutuksessa
+            hyödynsimme Swipe- ja Swael-kirjastoja, kun taas
+            Leaflet-karttakirjastoa käytettiin karttojen luomiseen.
+          </p>
+        </div>
+        <div className="container">
+          <div className="row members">
+            <div className="jäsenet">Ryhmän jäsenet</div>
+            <div className="col-md-2 box-person">Roya</div>
+            <div className="col-md-2 box-person">Nusrat</div>
+            <div className="col-md-2 box-person">Marija</div>
+            <div className="col-md-2 box-person">Olla</div>
+          </div>
+        </div>
         <div className="container mt-5 mb-5">
           <div className="row g-2">
-            <Swiper
+            {/* <Swiper
               loop={true}
               cssMode={true}
               navigation={true}
@@ -58,14 +83,17 @@ export default function AboutUs() {
               keyboard={true}
               modules={[Navigation, Pagination, Mousewheel, Keyboard]}
               className="mySwiper"
-              style={{ marginTop: "8rem", borderRadius: "20px 20px" }}
+              style={{
+                marginTop: "8rem",
+                borderRadius: "20px 20px",
+              }}
             >
-              {users.map((user) => (
-                <SwiperSlide>
+              {users.map((user, index) => (
+                <SwiperSlide key={index} style={{ marginLeft: "25rem" }}>
                   <UserAboutus {...user} />
                 </SwiperSlide>
               ))}
-            </Swiper>
+            </Swiper> */}
           </div>
         </div>
       </article>

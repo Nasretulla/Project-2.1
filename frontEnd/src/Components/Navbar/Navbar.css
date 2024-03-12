@@ -1,3 +1,4 @@
+
 .active {
     background-color: #9ab4fa45;
 
@@ -87,16 +88,18 @@ nav ul {
 
 
 
-@media (max-width: 480px) {
+@media (max-width: 1000px) {
     nav .menu {
         display: flex;
         margin-right: 2rem;
         margin-top: 1rem;
+
     }
 
     nav {
         flex-direction: column;
         align-items: flex-start;
+
     }
 
     nav ul {
@@ -105,6 +108,7 @@ nav ul {
         width: 100%;
         margin-bottom: 0.25rem;
         gap: 0.2rem;
+        background-color:#2B4769;
 
     }
 
@@ -121,8 +125,25 @@ nav ul {
 
     nav ul li a {
         margin: 0.5rem 0.5rem;
-        margin-right: -4rem;
         margin-top: 4rem;
         color: #1d4ed8;
     }
+
+    
+}
+
+
+
+.login-box{
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.80rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    cursor: pointer;
 }

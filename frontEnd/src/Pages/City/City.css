@@ -165,14 +165,14 @@ img {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-    background-color: var(--white-color);
+
     width: 100%;
     padding: 0.8rem 0;
     border-radius: 0 0 0.3rem 0.3rem;
     border-bottom: 0.3rem solid var(--primary-color);
     z-index: 9999;
     transition: all 400ms ease;
+    background-color: #C4D2E5;
 }
 
 .courses-top-bar__selection-item {
@@ -181,7 +181,7 @@ img {
     font-weight: 800;
     padding: 0.9rem 1.4rem;
     transition: all 200ms ease;
-    background-color: rgb(196, 196, 196);
+    background-color: #C4D2E5;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 
@@ -207,7 +207,7 @@ img {
     width: 100%;
     border: 1.5px solid #2B4769;
     padding: 0.3rem 1.5rem 0.3rem 4.2rem;
-border-radius: 15px;
+    border-radius: 15px;
     margin: 5rem 0 0 4rem;
     align-self: center;
 
@@ -299,7 +299,7 @@ border-radius: 15px;
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    box-shadow: 0 0 6px rgb(0, 0, 0, .2);
+
     background-color: var(--white-color);
     width: 100%;
     padding: .8rem 0;
@@ -307,6 +307,7 @@ border-radius: 15px;
     border-radius: 0 0 .3rem .3rem;
     transition: all 400ms ease;
     z-index: 9999;
+    background-color: #C4D2E5;
 }
 
 .courses-top-bar__selection:hover .courses-top-bar__selection-list {
@@ -444,13 +445,15 @@ border-radius: 15px;
 }
 
 
-.box-all-city{
-
-    background-color:#E6F0FF;
-
-    padding:20px 25px;
+.box-all-city {
+    background-color: #E6F0FF;
+    padding: 20px 25px;
     margin-bottom: 5rem;
+    height: 100vh;
 }
-.box-alert{
+
+.box-alert {
     padding: 1rem 2rem;
+    height: 300px;
 }
+

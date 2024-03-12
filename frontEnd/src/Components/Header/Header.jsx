@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <>
       <header className="box">
-        <div class="overlay box"></div>
+        <div className="overlay box"></div>
 
         {/* <video 
           playsinline="playsinline"
@@ -21,10 +21,10 @@ export default function Header() {
           />
         </video> */}
 
-        <div class="container h-100">
-          <div class="d-flex h-100 text-center align-items-center">
-            <div class="w-100 text-white">
-              <h1 class="display-3 heder-title">
+        <div className="container h-100">
+          <div className="d-flex h-100 text-center align-items-center">
+            <div className="w-100 text-white">
+              <h1 className="display-3 heder-title">
                 <Typewriter
                   onInit={(typewriter) => {
                     typewriter
@@ -32,7 +32,7 @@ export default function Header() {
                       .start()
                       .pauseFor(5000)
                       .deleteAll()
-                      .typeString("Project Business Colloge")
+                      .typeString("Ryhmäprojekti - 2")
                       .start()
                       .pauseFor(5000);
                   }}
@@ -41,7 +41,7 @@ export default function Header() {
                   }}
                 />
               </h1>
-              <p class="lead mb-0">Project Business Colloge</p>
+
             </div>
           </div>
         </div>

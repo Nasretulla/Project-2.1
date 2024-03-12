@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
-import "../Weather/Weather.css";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -17,7 +16,6 @@ const Weather = () => {
         );
 
         setWeatherData(response.data);
-        console.log(response.data);
       } catch (error) {
         setError(error);
       } finally {
@@ -36,7 +34,7 @@ const Weather = () => {
   }, []);
 
   // Function to convert kelvin to Celsius
-  const kelvinToCelsius = (kelvin) => kelvin - 273.15;
+  const kelvinToCelsius = (kelvin) => Math.round(kelvin - 273.15);
 
   const getIconUrl = (iconCode) =>
     `http://openweathermap.org/img/wn/${iconCode}.png`;
@@ -55,7 +53,7 @@ const Weather = () => {
             />
           )} */}
           <p className="temp">
-            {kelvinToCelsius(weatherData.main.temp).toFixed(2)} °C
+            {kelvinToCelsius(weatherData.main.temp).toFixed(0)} °C
           </p>
 
           {/* <p className="header-weather">{weatherData.name}:</p> */}
