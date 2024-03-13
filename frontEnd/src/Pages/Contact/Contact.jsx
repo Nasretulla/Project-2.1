@@ -20,7 +20,7 @@ export default function Contact() {
 
     onSubmit: (values) => {
       console.log(values);
-      fetch(`http://localhost:4000/v1/contact`, {
+      fetch(`https://project-2-1-seg8.onrender.com/v1/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values, null, 2),

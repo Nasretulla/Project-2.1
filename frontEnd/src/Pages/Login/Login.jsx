@@ -22,7 +22,7 @@ export default function Login() {
       password,
     };
 
-    fetch(`http://localhost:4000/v1/auth/login`, {
+    fetch(`https://project-2-1-seg8.onrender.com/v1/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

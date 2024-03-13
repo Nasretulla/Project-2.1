@@ -15,18 +15,18 @@ function App() {
     setIsloggedIn(true);
     setUserInfos(userInfos);
     localStorage.setItem("user", JSON.stringify({ token }));
-  },[])
+  }, []);
 
   const logout = useCallback(() => {
     settoken(null);
     setUserInfos({});
     localStorage.removeItem("user");
-  },[])
+  }, []);
 
   useEffect(() => {
     const localStorgeData = JSON.parse(localStorage.getItem("user"));
     if (localStorgeData) {
-      fetch(`http://localhost:4000/v1/auth/me`, {
+      fetch(`https://project-2-1-seg8.onrender.com/v1/auth/me`, {
         headers: { Authorization: `Bearer ${localStorgeData.token}` },
       })
         .then((res) => res.json())
@@ -37,7 +37,7 @@ function App() {
     } else {
       setIsloggedIn(false);
     }
-  }, [logout, login,token]);
+  }, [logout, login, token]);
 
   return (
     <>

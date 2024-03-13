@@ -34,7 +34,7 @@ export default function Register() {
     },
     validate,
     onSubmit: (values) => {
-      fetch(`http://localhost:4000/v1/auth/register`, {
+      fetch(`https://project-2-1-seg8.onrender.com/v1/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
